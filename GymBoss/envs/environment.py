@@ -18,7 +18,7 @@ class BossEnv(gym.Env):
         self.grid_cols = grid_cols
         self.render_mode = render_mode
 
-        self.agent = agent.BossAgent(grid_rows=grid_rows, grid_cols=grid_cols, fps=self.metadata['render_fps'])
+        self.agent = agent.BossAgent(grid_rows=grid_rows, grid_cols=grid_cols, fps=self.metadata['render_fps'], render_mode=render_mode)
 
         self.action_space = spaces.Discrete(len(agent.AgentAction))
 

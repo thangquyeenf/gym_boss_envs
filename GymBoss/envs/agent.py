@@ -26,14 +26,16 @@ class BossAgent:
     WE_BLOCK_POSITIONS = [(1, 2), (2, 2)]
     W_BLOCK_POSITIONS = [(0, 2), (1, 3), (2, 3), (3, 3)]
 
-    def __init__(self, grid_rows=4, grid_cols=4, fps=1):
+    def __init__(self, grid_rows=4, grid_cols=4, fps=1, render_mode=None):
         self.grid_rows = grid_rows
         self.grid_cols = grid_cols
+        self.render_mode = render_mode
         self.reset()
 
         self.fps = fps
         self.last_action = ''
-        self._init_pygame()
+        if self.render_mode is not None:
+            self._init_pygame()
     
     def _init_pygame(self):
         pygame.init()
